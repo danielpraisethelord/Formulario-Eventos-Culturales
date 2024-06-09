@@ -1,0 +1,273 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Formulario Completo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(images/bg.jpg);
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    .form-container {
+      max-height: 80vh;
+      width: 100%;
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h3 class="mb-4 text-center">Preguntas del Formulario</h3>
+    <form method = "POST" action ="insertarInformacion.php" class="signin-form">
+      <h4>Datos Generales del Participante:</h4>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Género:</label>
+                <div>
+                    <input type="radio" id="masculino" name="genero" value="masculino" required>
+                    <label for="masculino">Masculino</label>
+                </div>
+                <div>
+                    <input type="radio" id="femenino" name="genero" value="femenino" required>
+                    <label for="femenino">Femenino</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="residencia">Lugar de residencia:</label>
+                <input type="text" id="residencia" name="residencia" class="form-control" placeholder="Lugar de residencia" required>
+            </div>
+      
+            <h4>Participación en Eventos:</h4>
+            <div class="form-group">
+                <label>¿Qué eventos culturales en Oaxaca has asistido en el último año? (Marca todos los que apliquen)</label>
+                <div>
+                    <input type="checkbox" id="guelaguetza" name="eventos[]" value="1">
+                    <label for="guelaguetza">Guelaguetza</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="muertos" name="eventos[]" value="2">
+                    <label for="muertos">Día de los Muertos</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="rabanos" name="eventos[]" value="3">
+                    <label for="rabanos">Noche de Rábanos</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="semana_santa" name="eventos[]" value="4">
+                    <label for="semana_santa">Semana Santa</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="cine" name="eventos[]" value="5">
+                    <label for="cine">Festival Internacional de Cine de Oaxaca</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="soledad" name="eventos[]" value="6">
+                    <label for="soledad">Fiesta de la Virgen de la Soledad</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="carnaval" name="eventos[]" value="7">
+                    <label for="carnaval">Carnaval de Putla</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="otros" name="eventos[]" value="otros">
+                    <label for="otros">Otros (por favor especifique)</label>
+                </div>
+                <div>
+                    <input type="text" id="otros_especificar" name="otros_especificar" class="form-control mt-2" placeholder="Especifique otros eventos">
+                </div>
+            </div>
+      
+            <h4>Experiencia General:</h4>
+            <div class="form-group">
+                <label>¿Cómo calificarías tu experiencia general en los eventos culturales de Oaxaca?</label>
+                <div>
+                    <input type="radio" id="experiencia_excelente" name="experiencia" value="Excelente" required>
+                    <label for="experiencia_excelente">Excelente</label>
+                </div>
+                <div>
+                    <input type="radio" id="experiencia_buena" name="experiencia" value="Buena" required>
+                    <label for="experiencia_buena">Buena</label>
+                </div>
+                <div>
+                    <input type="radio" id="experiencia_regular" name="experiencia" value="Regular" required>
+                    <label for="experiencia_regular">Regular</label>
+                </div>
+                <div>
+                    <input type="radio" id="experiencia_mala" name="experiencia" value="Mala" required>
+                    <label for="experiencia_mala">Mala</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="explicacion_experiencia">Por favor, explica tu calificación anterior:</label>
+                <textarea id="explicacion_experiencia" name="explicacion_experiencia" class="form-control" placeholder="Explica tu calificación" required></textarea>
+            </div>
+      
+            <h4>Organización del Evento:</h4>
+            <div class="form-group">
+                <label>¿Cómo calificarías la organización de los eventos en los que has participado?</label>
+                <div>
+                    <input type="radio" id="organizacion_excelente" name="organizacion" value="Excelente" required>
+                    <label for="organizacion_excelente">Excelente</label>
+                </div>
+                <div>
+                    <input type="radio" id="organizacion_buena" name="organizacion" value="Buena" required>
+                    <label for="organizacion_buena">Buena</label>
+                </div>
+                <div>
+                    <input type="radio" id="organizacion_regular" name="organizacion" value="Regular" required>
+                    <label for="organizacion_regular">Regular</label>
+                </div>
+                <div>
+                    <input type="radio" id="organizacion_mala" name="organizacion" value="Mala" required>
+                    <label for="organizacion_mala">Mala</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="aspectos_organizacion">¿Qué aspectos de la organización te parecieron más destacables o problemáticos?</label>
+                <textarea id="aspectos_organizacion" name="aspectos_organizacion" class="form-control" placeholder="Aspectos destacables o problemáticos" required></textarea>
+            </div>
+      
+            <h4>Aspectos Culturales:</h4>
+            <div class="form-group">
+                <label>¿Qué tan importante crees que son estos eventos para preservar y promover la cultura oaxaqueña?</label>
+                <div>
+                    <input type="radio" id="importancia_muy" name="importancia" value="Muy importante" required>
+                    <label for="importancia_muy">Muy importante</label>
+                </div>
+                <div>
+                    <input type="radio" id="importancia_importante" name="importancia" value="Importante" required>
+                    <label for="importancia_importante">Importante</label>
+                </div>
+                <div>
+                    <input type="radio" id="importancia_poco" name="importancia" value="Poco importante" required>
+                    <label for="importancia_poco">Poco importante</label>
+                </div>
+                <div>
+                    <input type="radio" id="importancia_no" name="importancia" value="No importante" required>
+                    <label for="importancia_no">No importante</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="elementos_culturales">¿Qué elementos culturales (música, danza, gastronomía, etc.) disfrutas más en estos eventos?</label>
+                <textarea id="elementos_culturales" name="elementos_culturales" class="form-control" placeholder="Elementos culturales que disfrutas" required></textarea>
+            </div>
+      
+            <h4>Impacto Económico y Social:</h4>
+            <div class="form-group">
+                <label>¿Consideras que los eventos culturales tienen un impacto positivo en la economía local?</label>
+                <div>
+                    <input type="radio" id="impacto_si" name="impacto" value="Sí" required>
+                    <label for="impacto_si">Sí</label>
+                </div>
+                <div>
+                    <input type="radio" id="impacto_no" name="impacto" value="No" required>
+                    <label for="impacto_no">No</label>
+                </div>
+                <div>
+                    <input type="radio" id="impacto_seguro" name="impacto" value="No estoy seguro" required>
+                    <label for="impacto_seguro">No estoy seguro</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="beneficios_comunidad">¿De qué manera crees que estos eventos benefician a la comunidad local?</label>
+                <textarea id="beneficios_comunidad" name="beneficios_comunidad" class="form-control" placeholder="Beneficios a la comunidad" required></textarea>
+            </div>
+      
+            <h4>Accesibilidad y Comodidad:</h4>
+            <div class="form-group">
+                <label>¿Cómo calificarías la accesibilidad y comodidad de los lugares donde se realizan los eventos?</label>
+                <div>
+                    <input type="radio" id="accesibilidad_excelente" name="accesibilidad" value="Excelente" required>
+                    <label for="accesibilidad_excelente">Excelente</label>
+                </div>
+                <div>
+                    <input type="radio" id="accesibilidad_buena" name="accesibilidad" value="Buena" required>
+                    <label for="accesibilidad_buena">Buena</label>
+                </div>
+                <div>
+                    <input type="radio" id="accesibilidad_regular" name="accesibilidad" value="Regular" required>
+                    <label for="accesibilidad_regular">Regular</label>
+                </div>
+                <div>
+                    <input type="radio" id="accesibilidad_mala" name="accesibilidad" value="Mala" required>
+                    <label for="accesibilidad_mala">Mala</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dificultades_acceso">¿Tuviste alguna dificultad para acceder a los eventos? Si es así, ¿cuál?</label>
+                <textarea id="dificultades_acceso" name="dificultades_acceso" class="form-control" placeholder="Dificultades de acceso" required></textarea>
+            </div>
+      
+            <h4>Recomendaciones y Sugerencias:</h4>
+            <div class="form-group">
+                <label for="recomendar_eventos">¿Recomendarías estos eventos a otras personas? ¿Por qué?</label>
+                <textarea id="recomendar_eventos" name="recomendar_eventos" class="form-control" placeholder="¿Recomendarías estos eventos? ¿Por qué?" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="sugerencias_mejora">¿Qué sugerencias tienes para mejorar los eventos culturales en Oaxaca?</label>
+                <textarea id="sugerencias_mejora" name="sugerencias_mejora" class="form-control" placeholder="Sugerencias de mejora" required></textarea>
+            </div>
+            
+            <h4>Participación en el Futuro:</h4>
+            <div class="form-group">
+                <label>¿Planeas asistir a más eventos culturales en Oaxaca en el futuro?</label>
+                <div>
+                    <input type="radio" id="futuro_si" name="futuro" value="si" required>
+                    <label for="futuro_si">Sí</label>
+                </div>
+                <div>
+                    <input type="radio" id="futuro_no" name="futuro" value="no" required>
+                    <label for="futuro_no">No</label>
+                </div>
+                <div>
+                    <input type="radio" id="futuro_seguro" name="futuro" value="no_estoy_seguro" required>
+                    <label for="futuro_seguro">No estoy seguro</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="evento_esperado">¿Hay algún evento en particular que esperes con ansias? ¿Cuál?</label>
+                <textarea id="evento_esperado" name="evento_esperado" class="form-control" placeholder="Evento esperado" required></textarea>
+            </div>
+            
+      
+      <div class="form-group">
+        <button type="submit" class="form-control btn btn-primary submit px-3">Enviar</button>
+      </div>
+      <div class="form-group">
+        <button type="button" onclick="window.location.href='index.html'" class="form-control btn btn-secondary submit px-3">Regresar al Inicio de Sesión</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
